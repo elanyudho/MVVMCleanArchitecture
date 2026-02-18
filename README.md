@@ -245,17 +245,6 @@ cd MVVMCleanArchitecture
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Register & Forgot Password screens
-- [ ] Ktor Auth plugin (automatic token refresh)
-- [ ] Unit tests & UI tests
-- [ ] Navigation animations
-- [ ] Splash / onboarding screen
-- [ ] CI/CD pipeline (GitHub Actions)
-
----
-
 ## 📄 License
 
 ```
