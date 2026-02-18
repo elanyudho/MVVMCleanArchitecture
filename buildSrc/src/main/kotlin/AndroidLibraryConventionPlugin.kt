@@ -14,7 +14,7 @@ import org.gradle.kotlin.dsl.configure
  * 
  * This automatically configures:
  *   - compileSdk, minSdk
- *   - Java 11 compatibility
+ *   - Java 17 compatibility
  *   - Kotlin jvmTarget
  *   - Release build type
  *   - Consumer proguard rules
@@ -47,15 +47,15 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 }
 
                 compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_11
-                    targetCompatibility = JavaVersion.VERSION_11
+                    sourceCompatibility = JavaVersion.VERSION_17
+                    targetCompatibility = JavaVersion.VERSION_17
                 }
             }
 
             // Kotlin options
             tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java) {
                 compilerOptions {
-                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+                    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
                 }
             }
         }
