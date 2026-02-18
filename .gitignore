@@ -1,0 +1,24 @@
+# ==================== Build ====================
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# ==================== IDE ====================
+.idea/
+*.iml
+*.hprof
+captures/
+
+# ==================== Gradle ====================
+.gradle/
+local.properties
+
+# ==================== OS ====================
+.DS_Store
+Thumbs.db
+
+# ==================== Native ====================
+.externalNativeBuild/
+.cxx/
+
+# ==================== AI Assistant ====================
+.gemini/
