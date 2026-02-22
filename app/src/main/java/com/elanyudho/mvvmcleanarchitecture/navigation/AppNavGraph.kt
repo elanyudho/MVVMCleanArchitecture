@@ -1,16 +1,13 @@
 package com.elanyudho.mvvmcleanarchitecture.navigation
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.elanyudho.feature.auth.presentation.screen.LoginScreen
+import com.elanyudho.feature.home.presentation.screen.ExploreScreen
+import com.elanyudho.feature.home.presentation.screen.HomeScreen
 
 /**
  * App-level navigation graph using type-safe routes (Navigation 2.8+).
@@ -47,31 +44,16 @@ fun AppNavGraph(
         
         // ==================== Home ====================
         composable<AppRoutes.Home> {
-            // TODO: Replace with HomeScreen from feature:home module
-            HomePlaceholder()
+            HomeScreen(
+                onNavigateToExplore = {
+                    navController.navigate(AppRoutes.Explore)
+                }
+            )
         }
         
-        // === Add more destinations as features grow ===
-        
-        // composable<AppRoutes.Detail> { backStackEntry ->
-        //     val detail: AppRoutes.Detail = backStackEntry.toRoute()
-        //     DetailScreen(id = detail.id)
-        // }
-    }
-}
-
-/**
- * Temporary placeholder until feature:home is created.
- */
-@Composable
-private fun HomePlaceholder() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "Home Screen",
-            style = MaterialTheme.typography.headlineMedium
-        )
+        // ==================== Explore ====================
+        composable<AppRoutes.Explore> {
+            ExploreScreen()
+        }
     }
 }

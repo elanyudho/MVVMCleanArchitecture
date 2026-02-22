@@ -1,6 +1,6 @@
-package com.elanyudho.core.base
+package com.elanyudho.core.base.presentation.state
 
-import com.elanyudho.core.base.wrapper.AppError
+import com.elanyudho.core.base.data.wrapper.AppError
 
 /**
  * Base interface for all UI states.

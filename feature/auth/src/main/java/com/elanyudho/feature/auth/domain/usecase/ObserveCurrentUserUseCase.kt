@@ -2,7 +2,7 @@ package com.elanyudho.feature.auth.domain.usecase
 
 import com.elanyudho.feature.auth.domain.model.User
 import com.elanyudho.feature.auth.domain.repository.AuthRepository
-import com.elanyudho.core.base.wrapper.Result
+import com.elanyudho.core.base.data.wrapper.Result
 import kotlinx.coroutines.flow.Flow
 
 /**

@@ -1,6 +1,6 @@
 package com.elanyudho.feature.auth.presentation.viewmodel
 
-import com.elanyudho.core.base.BaseViewModel
+import com.elanyudho.core.base.presentation.viewmodel.BaseViewModel
 import com.elanyudho.feature.auth.domain.usecase.LoginParams
 import com.elanyudho.feature.auth.domain.usecase.LoginUseCase
 import com.elanyudho.feature.auth.domain.usecase.ObserveCurrentUserUseCase

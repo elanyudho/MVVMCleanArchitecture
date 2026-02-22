@@ -1,9 +1,9 @@
 package com.elanyudho.feature.auth.domain.usecase
 
 import com.elanyudho.feature.auth.domain.model.User
-import com.elanyudho.core.base.wrapper.Result
-import com.elanyudho.core.base.wrapper.AppError
-import com.elanyudho.core.base.UseCase
+import com.elanyudho.core.base.data.wrapper.Result
+import com.elanyudho.core.base.data.wrapper.AppError
+import com.elanyudho.core.base.presentation.usecase.UseCase
 import com.elanyudho.feature.auth.domain.repository.AuthRepository
 
 /**

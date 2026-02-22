@@ -1,4 +1,4 @@
-package com.elanyudho.core.base.wrapper
+package com.elanyudho.core.base.data.wrapper
 
 /**
  * Sealed class representing application-level errors.
@@ -66,7 +66,7 @@ sealed class AppError(
     /**
      * 422 Unprocessable Entity - Validation error.
      */
-    data class ValidationError(
+    data class  ValidationError(
         override val message: String = "Validation failed.",
         val errors: Map<String, List<String>> = emptyMap()
     ) : AppError(message, 422)

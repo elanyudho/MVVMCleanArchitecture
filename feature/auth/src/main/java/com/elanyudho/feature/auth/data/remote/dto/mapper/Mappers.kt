@@ -1,7 +1,7 @@
 package com.elanyudho.feature.auth.data.remote.dto.mapper
 
 import com.elanyudho.feature.auth.domain.model.User
-import com.elanyudho.feature.auth.data.remote.dto.LoginResponse
+import com.elanyudho.feature.auth.data.remote.dto.response.LoginResponse
 
 /**
  * Mapper extension to convert LoginResponse DTO to User domain model.

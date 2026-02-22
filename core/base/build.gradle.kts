@@ -1,5 +1,6 @@
 plugins {
     id("mvvm.android.library")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -7,6 +8,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)

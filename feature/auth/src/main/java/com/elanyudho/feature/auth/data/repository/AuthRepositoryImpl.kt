@@ -5,8 +5,8 @@ import com.elanyudho.feature.auth.data.remote.AuthRemoteDataSource
 import com.elanyudho.feature.auth.data.remote.dto.mapper.toUser
 import com.elanyudho.feature.auth.domain.model.User
 import com.elanyudho.feature.auth.domain.repository.AuthRepository
-import com.elanyudho.core.base.wrapper.AppError
-import com.elanyudho.core.base.wrapper.Result
+import com.elanyudho.core.base.data.wrapper.AppError
+import com.elanyudho.core.base.data.wrapper.Result
 import com.elanyudho.core.network.connectivity.ConnectivityMonitor
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -38,11 +38,11 @@ class AuthRepositoryImpl(
         
         return when (val result = remoteDataSource.login(email, password)) {
             is Result.Success -> {
-                val user = result.data.toUser()
-                // Save to encrypted DataStore + Room cache
+                val response = result.data.data
+                val user = response.toUser()
                 localDataSource.saveSession(
-                    accessToken = result.data.token,
-                    refreshToken = result.data.refreshToken ?: "",
+                    accessToken = response.token,
+                    refreshToken = response.refreshToken ?: "",
                     user = user
                 )
                 Result.Success(user)
@@ -65,10 +65,11 @@ class AuthRepositoryImpl(
         
         return when (val result = remoteDataSource.register(name, email, password)) {
             is Result.Success -> {
-                val user = result.data.toUser()
+                val response = result.data.data
+                val user = response.toUser()
                 localDataSource.saveSession(
-                    accessToken = result.data.token,
-                    refreshToken = result.data.refreshToken ?: "",
+                    accessToken = response.token,
+                    refreshToken = response.refreshToken ?: "",
                     user = user
                 )
                 Result.Success(user)
@@ -115,13 +116,14 @@ class AuthRepositoryImpl(
         
         return when (val result = remoteDataSource.refreshToken(currentRefreshToken)) {
             is Result.Success -> {
+                val response = result.data.data
                 localDataSource.updateTokens(
-                    accessToken = result.data.token,
-                    refreshToken = result.data.refreshToken
+                    accessToken = response.token,
+                    refreshToken = response.refreshToken
                 )
-                val user = result.data.toUser()
+                val user = response.toUser()
                 localDataSource.cacheUser(user)
-                Result.Success(result.data.token)
+                Result.Success(response.token)
             }
             is Result.Error -> result
             is Result.Loading -> result
@@ -139,7 +141,7 @@ class AuthRepositoryImpl(
         if (connectivityMonitor.isOnline.value) {
             when (val result = remoteDataSource.getCurrentUser()) {
                 is Result.Success -> {
-                    val user = result.data.toUser()
+                    val user = result.data.data.toUser()
                     localDataSource.cacheUser(user)
                     return Result.Success(user)
                 }

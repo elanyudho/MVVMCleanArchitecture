@@ -21,6 +21,9 @@ object AppRoutes {
     @Serializable
     object Home
     
+    @Serializable
+    object Explore
+    
     // === Add more routes as features grow ===
     
     // @Serializable

@@ -49,6 +49,7 @@ dependencies {
     implementation(projects.core.security)
     implementation(projects.core.database)
     implementation(projects.feature.auth)
+    implementation(projects.feature.home)
     
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)

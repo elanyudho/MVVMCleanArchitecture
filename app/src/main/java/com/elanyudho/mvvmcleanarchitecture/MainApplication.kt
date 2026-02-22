@@ -5,6 +5,7 @@ import com.elanyudho.core.database.di.databaseModule
 import com.elanyudho.core.network.di.networkModule
 import com.elanyudho.core.security.di.securityModule
 import com.elanyudho.feature.auth.di.authModule
+import com.elanyudho.feature.home.di.homeModule
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import org.koin.android.ext.koin.androidContext
@@ -34,7 +35,8 @@ class MainApplication : Application() {
                 networkModule,     // Ktor + ConnectivityMonitor
                 
                 // Feature modules
-                authModule
+                authModule,
+                homeModule
             )
         }
     }

@@ -1,6 +1,6 @@
-package com.elanyudho.core.base
+package com.elanyudho.core.base.presentation.usecase
 
-import com.elanyudho.core.base.wrapper.Result
+import com.elanyudho.core.base.data.wrapper.Result
 import kotlinx.coroutines.flow.Flow
 
 /**

@@ -1,4 +1,4 @@
-package com.elanyudho.core.base.wrapper
+package com.elanyudho.core.base.data.wrapper
 
 /**
  * Sealed class for wrapping API results.

@@ -1,9 +1,9 @@
 package com.elanyudho.feature.auth.presentation.state
 
 import com.elanyudho.feature.auth.domain.model.User
-import com.elanyudho.core.base.wrapper.AppError
-import com.elanyudho.core.base.UiEvent
-import com.elanyudho.core.base.UiState
+import com.elanyudho.core.base.data.wrapper.AppError
+import com.elanyudho.core.base.presentation.state.UiEvent
+import com.elanyudho.core.base.presentation.state.UiState
 
 /**
  * UI State for the Login screen.
